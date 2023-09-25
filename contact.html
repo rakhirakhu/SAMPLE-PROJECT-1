@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="contact.js"></script>
+    <style>
+        body{
+background-image:url(ba1.jpg);
+background-position: center;
+background-size:cover;
+position: relative;   
+height: 110vh;
+}
+.container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+
+        body {
+            margin: 0; 
+        }
+
+        header {
+            background-color: #289e98;
+            color: rgb(245, 240, 240);
+            padding: 10px;
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        header li {
+            margin: 0 10px;
+        }
+
+        .contact-form {
+            margin-top: 10px;
+            
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        
+        }
+
+        .form-label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 3px;
+        }
+
+        .form-input {
+            width: 45%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #e6e1e1;
+            border-radius: 5px;
+        }
+
+        .form-textarea {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd2d2;
+            border-radius: 5px;
+        }
+
+        .form-button {
+            background-color: #007bff;
+            color: #c93434;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        
+        .center{
+            background-image: linear-gradient(rgb(233, 233, 30),rgb(228, 111, 228));
+            text-align: center;
+            height: 500px;
+        }
+        footer {
+            background-color: #289e98;
+            color: white;
+            padding: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>claysys</h1>
+            <nav>
+                <ul>
+                    <li id="logo"><img src="logo.png" alt="Logo" width="50" height="50"></li>
+                    <li><a href="scroll.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign up</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        
+            <div class="center">
+        <h2>Contact Us</h2>
+        <p><a href="tel:6238761265">6238761265</a></p>
+        <p><a href="mailto:rakhirakhu9207@gmail.com">claysys@gmail.com</a></p>
+        <address>Infopark, Kochi</address><br>
+<div>
+    
+        
+    <label for="emailaddress">Email address</label>
+    <input type="email" id="emailaddress" name="emailaddress"  placeholder="email address" onfocusout="validateemail()">
+    <span id="emailaddresserror" style="color: red"></span><br>
+</div>
+<div class="input-box">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Password" onfocusout="validatepassword()">
+    <span id="passworderror" style="color: red"></span><br><br>
+</div>
+          
+                <button type="submit" class="form-button">Submit</button><br><br>
+                <img src="claysys.jpg">  
+    <br><br>
+    
+            </div>
+        
+        
+    
+                <footer>
+                    &copy;claysys
+                    <address>Infopark, Kochi</address>
+                    <div class="social-icons">
+                        <a href="http://www.linkedin.com"><img src="link.jpg" alt="LinkedIn" height="20"></a>
+                        <a href="http://www.instagram.com"><img src="instag.jpg" alt="Instagram" height="20"></a>
+                    </div>
+                </footer>
+            </div>
+        </body>
+        </html>
+
+
+    

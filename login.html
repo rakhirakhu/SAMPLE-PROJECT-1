@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(background.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center {
+            width: 55%;
+            max-width: 300px;
+            
+            background-image: linear-gradient(violet, blue);
+            border-radius: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: rgb(82, 20, 133);
+            text-align: center;
+        }
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        label {
+        
+            display: block;
+            margin-bottom: 5px;
+            
+            color: #fff;
+            
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid silver;
+            border-radius: 5px;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 70%;
+            height: 40px;
+            border: none;
+            background: rgb(82, 20, 133);
+            border-radius: 25px;
+            font-size: 18px;
+            color: #e9f4fb;
+            cursor: pointer;
+            outline: none;
+        }
+
+        button:hover {
+            color: green;
+        }
+
+        @media screen and (max-width: 768px) {
+            .center {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            input[type="text"] {
+                padding: 8px;
+            }
+
+            
+            .remember-forgot {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            button {
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            label {
+                font-size: 16px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>Login Form</h1>
+        <div class="input-box">
+            <label for="emailaddress">Email address</label>
+            <input type="email" id="emailaddress" name="emailaddress"  placeholder="email address" onfocusout="validateemail()">
+            <span id="emailaddresserror" style="color: red"></span>
+        </div>
+        <div class="input-box">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" onfocusout="validatepassword()">
+            <span id="passworderror" style="color: red"></span>
+        </div>
+        <div class="remember-forgot">
+            <label><input type="checkbox" />Remember me</label>
+            <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit">Login</button>
+        <div class="register-link">
+            <p>Not a member?</p>
+            <a href="signup.html">Signup now</a>
+        </div>
+    </div>
+    <script>
+        
+     function validateemail() {
+     var emailarea = document.getElementById("emailaddress");
+    var emailaddress = emailarea.value.trim();
+     var emailaddresserror = document.getElementById("emailaddresserror");
+    
+     if (emailaddress === "") {
+     emailaddresserror.textContent = "Email address Required";
+     emailarea.style.borderColor = "red";
+    } else {
+     emailaddresserror.textContent = "";
+     emailarea.style.borderColor = "";
+     }
+    }
+    function validatepassword() {
+     var passwordarea = document.getElementById("password");
+    var password = passwordarea.value.trim();
+     var passworderror = document.getElementById("passworderror");
+    
+     if (password === "") {
+     passworderror.textContent = "Password Required";
+     passwordarea.style.borderColor = "red";
+    } 
+ else if (password.length < 6) {
+            passworderror.textContent = "Password must be at least 6 characters long";
+            passwordarea.style.borderColor = "red";
+ }
+ else {
+     passworderror.textContent = "";
+     passwordarea.style.borderColor = "";
+     }
+    }
+
+    </script>
+</body>
+</html>
+
+
+

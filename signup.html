@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+<title>Sign Up</title>
+<style>
+      .center{
+            width:25%;
+            height:80%;
+            
+      background-image: linear-gradient(rgba(0,0,100,0.8),rgba(0,0,100,0.8)),url(b2.jpg);
+            background-position: center;
+background-size:cover;
+position: relative;   
+height:97%;
+            display: grid;
+      
+            position: absolute;
+            
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            border-radius: 40px;
+            
+      }
+      body{
+        background-image: url(background.jpg);
+        background-position: center;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      }
+      h2{
+        font-size: 24px;
+            margin-bottom: 15px;
+            color:white;
+            text-align: center;
+      }
+    
+   
+      
+      form{
+        color:white;
+        font-style: normal;
+
+
+      }
+      
+button{
+    width:80%;
+    height: 50px;
+    border: 1px solid;
+    background:rgb(94, 12, 62);
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+      
+
+
+</style>
+
+</head>
+<body>
+ <center>
+    <div class="center">
+ <h2>Sign Up</h2>
+ <form>
+ First Name: <input type="text" id="firstName" name="firstName" placeholder="First Name" onfocusout="validateFirstName()" required>
+                <span id="firstNameError" style="color: red;"></span><br>
+  Last Name: <input type="text" id="lastName" name="lastName" placeholder="Last Name" onfocusout="validateLastName()" required><br>
+                <span id="lastNameError" style="color: red;"></span><br>
+Date of Birth: <input type="date" id="dob" name="dob" onfocusout="validateDOB()" required><br>
+                <span id="dobError" style="color: red;"></span><br>
+Age: <input type="number" id="age" name="age"  onfocusout="validateAge()" required><br>
+                <span id="ageError" style="color: red;"></span><br>
+Gender: 
+ <input type="radio" id="male" name="gender" value="male"  onfocusout="validateGender()" required>
+ <label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="female" required>
+ <label for="female">Female</label>
+ <input type="radio" id="other" name="gender" value="other" required>
+<label for="other">Other</label><br>
+<span id="genderError" style="color: red;"></span><br>
+
+ Phone Number: <input type="number" id="mob" name="phoneNumber"  placeholder="Phone Number" onfocusout="validatePhoneNumber()" required><br>
+                <span id="phoneNumberError" style="color: red;"></span><br>
+ </br>
+ Email Address: <input type="email" id="email" name="email"  placeholder="Email Address" onfocusout="validateEmail()" required><br>
+                <span id="emailError" style="color: red;"></span><br>
+</br>
+Address: <input type="text" id="address" name="address"  placeholder="Address" onfocusout="validateAddress()" required><br>
+                <span id="addressError" style="color: red;"></span><br>
+</br>
+State: 
+ <select id="state" name="state"  onfocusout="validateState()" required>
+     <option value="Kerala">Kerala</option>
+    <option value="karnataka">karnataka</option>
+    <option value="tamilnadu">taminadu</option>
+    <option value="delhi">delhi</option>
+</select><br>
+<span id="stateError" style="color: red;"></span><br>
+
+City: 
+ <select id="city" name="city"  onfocusout="validateCity()" required>
+<option value="E">Ernakulam</option>
+ <option value="T">Trivandrum</option>
+ <option value="k">kollam</option>
+ <option value="m">malappuram</option>
+</select><br>
+<span id="cityError" style="color: red;"></span><br>
+ Username: <input type="text" id="username" name="username"  placeholder="Username" onfocusout="validateUsername()" required>
+                <span id="usernameError" style="color: red;"></span><br>
+Password: <input type="password" id="password" name="password"  placeholder="Password" onfocusout="validatePassword()" required><br>
+                <span id="passwordError" style="color: red;"></span><br>
+ Confirm Password: <input type="password" id="confirmPassword" name="confirmPassword"  placeholder="Confirm Password" onfocusout="validateConfirmPassword()" required><br>
+                <span id="confirmPasswordError" style="color: red;"></span><br><br>
+
+<button typw="signup">signup</button>
+ </form>
+</div>
+
+ </center>
+  <script>
+        function validateFirstName() {
+            var firstNameField = document.getElementById("firstName");
+            var firstName = firstNameField.value.trim();
+            var firstNameError = document.getElementById("firstNameError");
+
+            if (firstName === "") {
+                firstNameError.textContent = "First Name is required";
+                firstNameField.style.borderColor = "red";
+            } else {
+                firstNameError.textContent = "";
+                firstNameField.style.borderColor = "";
+            }
+        }
+
+        function validateLastName() {
+            var lastNameField = document.getElementById("lastName");
+            var lastName = lastNameField.value.trim();
+            var lastNameError = document.getElementById("lastNameError");
+
+            if (lastName === "") {
+                lastNameError.textContent = "Last Name is required";
+                lastNameField.style.borderColor = "red";
+            } else {
+                lastNameError.textContent = "";
+                lastNameField.style.borderColor = "";
+            }
+        }
+
+        function validateDOB() {
+            var dobField = document.getElementById("dob");
+            var dob = dobField.value;
+            var dobError = document.getElementById("dobError");
+
+            if (dob === "") {
+                dobError.textContent = "Date of Birth is required";
+                dobField.style.borderColor = "red";
+            } else {
+                dobError.textContent = "";
+                dobField.style.borderColor = "";
+            }
+        }
+
+        function validateAge() {
+            var ageField = document.getElementById("age");
+            var age = ageField.value;
+            var ageError = document.getElementById("ageError");
+
+            if (age === "") {
+                ageError.textContent = "Age is required";
+                ageField.style.borderColor = "red";
+            } else {
+                ageError.textContent = "";
+                ageField.style.borderColor = "";
+            }
+        }
+
+        function validateGender() {
+            var genderField = document.querySelector('input[name="gender"]:checked');
+            var genderError = document.getElementById("genderError");
+
+            if (!genderField) {
+                genderError.textContent = "Gender is required";
+            } else {
+                genderError.textContent = "";
+            }
+        }
+
+        function validatePhoneNumber() {
+            var phoneNumberField = document.getElementById("mob");
+            var phoneNumber = phoneNumberField.value;
+            var phoneNumberError = document.getElementById("phoneNumberError");
+
+            if (phoneNumber === "") {
+                phoneNumberError.textContent = "Phone Number is required";
+                phoneNumberField.style.borderColor = "red";
+            } else {
+                phoneNumberError.textContent = "";
+                phoneNumberField.style.borderColor = "";
+            }
+        }
+
+        function validateEmail() {
+            var emailField = document.getElementById("email");
+            var email = emailField.value;
+            var emailError = document.getElementById("emailError");
+
+            if (email === "") {
+                emailError.textContent = "Email Address is required";
+                emailField.style.borderColor = "red";
+            } else {
+                emailError.textContent = "";
+                emailField.style.borderColor = "";
+            }
+        }
+
+        function validateAddress() {
+            var addressField = document.getElementById("address");
+            var address = addressField.value;
+            var addressError = document.getElementById("addressError");
+
+            if (address === "") {
+                addressError.textContent = "Address is required";
+                addressField.style.borderColor = "red";
+            } else {
+                addressError.textContent = "";
+                addressField.style.borderColor = "";
+            }
+        }
+
+        function validateState() {
+            var stateField = document.getElementById("state");
+            var state = stateField.value;
+            var stateError = document.getElementById("stateError");
+
+            if (state === "") {
+                stateError.textContent = "State is required";
+                stateField.style.borderColor = "red";
+            } else {
+                stateError.textContent = "";
+                stateField.style.borderColor = "";
+            }
+        }
+
+        function validateCity() {
+            var cityField = document.getElementById("city");
+            var city = cityField.value;
+            var cityError = document.getElementById("cityError");
+
+            if (city === "") {
+                cityError.textContent = "City is required";
+                cityField.style.borderColor = "red";
+            } else {
+                cityError.textContent = "";
+                cityField.style.borderColor = "";
+            }
+        }
+
+        function validateUsername() {
+            var usernameField = document.getElementById("username");
+            var username = usernameField.value.trim();
+            var usernameError = document.getElementById("usernameError");
+
+            if (username === "") {
+                usernameError.textContent = "Username is required";
+                usernameField.style.borderColor = "red";
+            } else {
+                usernameError.textContent = "";
+                usernameField.style.borderColor = "";
+            }
+        }
+
+        function validatePassword() {
+            var passwordField = document.getElementById("password");
+            var password = passwordField.value;
+            var passwordError = document.getElementById("passwordError");
+
+            if (password === "") {
+                passwordError.textContent = "Password is required";
+                passwordField.style.borderColor = "red";
+            }
+          
+           else if(password.length < 6) {
+            passwordError.textContent = "Password must be at least 6 characters long";
+            passwordField.style.borderColor = "red";
+ 
+            } else {
+                passwordError.textContent = "";
+                passwordField.style.borderColor = "";
+            }
+           
+        }
+
+        function validateConfirmPassword() {
+            var passwordField = document.getElementById("password");
+            var confirmPasswordField = document.getElementById("confirmPassword");
+            var confirmPassword = confirmPasswordField.value;
+            var confirmPasswordError = document.getElementById("confirmPasswordError");
+
+            if (confirmPassword === "") {
+                confirmPasswordError.textContent = "Confirm Password is required";
+                confirmPasswordField.style.borderColor = "red";
+            } else if (passwordField.value !== confirmPassword) {
+                confirmPasswordError.textContent = "Passwords do not match";
+                confirmPasswordField.style.borderColor = "red";
+            } else {
+                confirmPasswordError.textContent = "";
+                confirmPasswordField.style.borderColor = "";
+            }
+        }
+    </script>
+</body>
+</html> 
